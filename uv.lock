@@ -9,13 +9,13 @@ resolution-markers = [
 
 [manifest]
 members = [
-    "agent-starter-python",
+    "agent",
     "internal",
     "livekit-uv-workspace",
 ]
 
 [[package]]
-name = "agent-starter-python"
+name = "agent"
 version = "1.0.0"
 source = { editable = "packages/agent" }
 dependencies = [
