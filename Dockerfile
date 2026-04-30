@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 #
-# uv workspace image: installs ``agent-starter-python`` + workspace ``internal``.
+# uv workspace image: installs ``agent`` + workspace ``internal``.
 #
 # Build (always use the repository root as context):
 #
@@ -37,9 +37,9 @@ COPY src/livekit_uv_workspace ./src/livekit_uv_workspace/
 COPY packages/internal ./packages/internal/
 COPY packages/agent ./packages/agent/
 
-RUN uv sync --locked --package agent-starter-python --no-dev
+RUN uv sync --locked --package agent --no-dev
 
-RUN uv run --package agent-starter-python python packages/agent/src/agent.py download-files
+RUN uv run --package agent python packages/agent/src/agent.py download-files
 
 FROM base
 
@@ -57,4 +57,4 @@ COPY --from=build --chown=appuser:appuser /app /app
 WORKDIR /app
 USER appuser
 
-CMD ["uv", "run", "--package", "agent-starter-python", "python", "packages/agent/src/agent.py", "start"]
+CMD ["uv", "run", "--package", "agent", "python", "packages/agent/src/agent.py", "start"]
