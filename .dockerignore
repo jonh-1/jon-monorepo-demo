@@ -1,0 +1,30 @@
+# VCS and local env (LiveKit injects secrets at runtime)
+.git
+.gitignore
+.venv
+venv
+.env
+.env.*
+
+# Python noise
+**/__pycache__
+**/*.py[cod]
+**/*.egg-info
+**/dist
+**/build
+.pytest_cache
+.ruff_cache
+.mypy_cache
+
+# Agent package: omit tests and dev tooling from the image context
+packages/agent/tests
+packages/agent/.github
+packages/agent/eval
+packages/agent/evals
+
+# Editor / agent helpers
+**/.cursor
+**/.claude
+**/.codex
+**/.idea
+**/.vscode
