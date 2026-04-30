@@ -1,0 +1,10 @@
+[project]
+name = "internal"
+version = "0.1.0"
+description = "Shared library code for workspace agents"
+requires-python = ">=3.10,<3.15"
+dependencies = []
+
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
